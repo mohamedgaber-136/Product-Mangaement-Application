@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en" class="h-100">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="this is crud application" />
+    <!--Bs5 stlye-->
+    <link rel="stylesheet" href="bootstrap.min.css" />
+    <!--SweetALERT-->
+    
+    <!--Css style-->
+    <link rel="stylesheet" href="style.css" />
+    <!--font awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>Product Mangament application</title>
+  </head>
+  <body id="body" class="d-flex flex-column h-100 align-items-center">
+    <div class="alert alert-danger m-0 d-none" id="alert_" role="alert">
+      There is No Products In This category
+    </div>
+    <!-- SVG TOP -->
+    <svg id="dark_" class="position-fixed" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+      <path
+        fill="#273036"
+        fill-opacity="1"
+        d="M0,160L13.3,138.7C26.7,117,53,75,80,96C106.7,117,133,203,160,218.7C186.7,235,213,181,240,176C266.7,171,293,213,320,218.7C346.7,224,373,192,400,154.7C426.7,117,453,75,480,96C506.7,117,533,203,560,234.7C586.7,267,613,245,640,208C666.7,171,693,117,720,133.3C746.7,149,773,235,800,261.3C826.7,288,853,256,880,245.3C906.7,235,933,245,960,250.7C986.7,256,1013,256,1040,229.3C1066.7,203,1093,149,1120,128C1146.7,107,1173,117,1200,144C1226.7,171,1253,213,1280,192C1306.7,171,1333,85,1360,85.3C1386.7,85,1413,171,1427,213.3L1440,256L1440,0L1426.7,0C1413.3,0,1387,0,1360,0C1333.3,0,1307,0,1280,0C1253.3,0,1227,0,1200,0C1173.3,0,1147,0,1120,0C1093.3,0,1067,0,1040,0C1013.3,0,987,0,960,0C933.3,0,907,0,880,0C853.3,0,827,0,800,0C773.3,0,747,0,720,0C693.3,0,667,0,640,0C613.3,0,587,0,560,0C533.3,0,507,0,480,0C453.3,0,427,0,400,0C373.3,0,347,0,320,0C293.3,0,267,0,240,0C213.3,0,187,0,160,0C133.3,0,107,0,80,0C53.3,0,27,0,13,0L0,0Z"
+      ></path>
+    </svg>
+    <svg id="light_" class="position-fixed" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+      <path
+        fill="#f3f4f5"
+        fill-opacity="1"
+        d="M0,160L13.3,138.7C26.7,117,53,75,80,96C106.7,117,133,203,160,218.7C186.7,235,213,181,240,176C266.7,171,293,213,320,218.7C346.7,224,373,192,400,154.7C426.7,117,453,75,480,96C506.7,117,533,203,560,234.7C586.7,267,613,245,640,208C666.7,171,693,117,720,133.3C746.7,149,773,235,800,261.3C826.7,288,853,256,880,245.3C906.7,235,933,245,960,250.7C986.7,256,1013,256,1040,229.3C1066.7,203,1093,149,1120,128C1146.7,107,1173,117,1200,144C1226.7,171,1253,213,1280,192C1306.7,171,1333,85,1360,85.3C1386.7,85,1413,171,1427,213.3L1440,256L1440,0L1426.7,0C1413.3,0,1387,0,1360,0C1333.3,0,1307,0,1280,0C1253.3,0,1227,0,1200,0C1173.3,0,1147,0,1120,0C1093.3,0,1067,0,1040,0C1013.3,0,987,0,960,0C933.3,0,907,0,880,0C853.3,0,827,0,800,0C773.3,0,747,0,720,0C693.3,0,667,0,640,0C613.3,0,587,0,560,0C533.3,0,507,0,480,0C453.3,0,427,0,400,0C373.3,0,347,0,320,0C293.3,0,267,0,240,0C213.3,0,187,0,160,0C133.3,0,107,0,80,0C53.3,0,27,0,13,0L0,0Z"
+      ></path>
+    </svg>
+    <!-- SVG END  -->
+    <!-- SWITCH BUTTON  -->
+  
+    <!-- END OF SWITCH BUTTON -->
+    <!-- Aside  -->
+    <section class="aside  d-none d-lg-flex bg-dark flex-column  justify-content-center align-items-center h-100 justify-content-between " id="aside">
+      <div class="log">
+        <a href="#"><img src="logo_transparent.png" alt="logo" width="80px"></a>
+      </div>
+      <ul class="sideNav d-flex justify-content-center gap-4 flex-column ">
+        <li><a href="https://www.facebook.com/Mohamed.ahmed66666" target="_blank"><i class="fs-2 fa-brands fa-facebook text-white "></i></a></li>
+        <li><a href="https://www.linkedin.com/in/mohamed-gaber-476996266" target="_blank"><i class="fs-2 fa-brands fa-linkedin text-white "></i></a></li>
+        <li><a href="https://www.instagram.com/muhammed_gabeer" target="_blank"><i class="fs-2 fa-brands fa-instagram text-white"></i></a></li>
+        <li><a href="https://github.com/mohamedgaber-136" target="_blank"><i class="fs-2 fa-brands fa-github text-white" ></i></a></li>
+      </ul>
+      <div id="copy_right">
+      </div>
+    </section>
+    <div class="asideMob bg-dark d-flex justify-content-center align-content-center py-3 d-flex d-lg-none ">
+      <ul class="d-flex flex-column p-0 gap-2 align-content-center m-0 ">
+        <li><a href="https://www.facebook.com/Mohamed.ahmed66666" target="_blank"><i class="fs-2 fa-brands fa-facebook text-white "></i></a></li>
+        <li><a href="https://www.linkedin.com/in/mohamed-gaber-476996266" target="_blank"><i class="fs-2 fa-brands fa-linkedin text-white "></i></a></li>
+        <li><a href="https://www.instagram.com/muhammed_gabeer" target="_blank"><i class="fs-2 fa-brands fa-instagram text-white"></i></a></li>
+        <li><a href="https://github.com/mohamedgaber-136" target="_blank"><i class="fs-2 fa-brands fa-github text-white" ></i></a></li>
+      </ul>
+    </div>
+    <!-- THE FULL CRUD  -->
+    <section
+      class=" container-fluid mt-2  d-flex align-items-center  flex-column "
+      id="container"
+    >
+      <div class="searchArea d-flex gap-2">
+        <div class="search_bar d-flex gap-1 mb-2">
+          <input type='search' placeholder="Product Name or ID" oninput="searchProduct()" size="20"  id="search">
+          <i class="fa fa-search" ></i>
+        </div>
+          <div class="search_bars d-flex gap-1 mb-2">
+            <select
+            type="text"
+            class="form-control"
+            id="pdcategSearch"
+            onchange="searchProductCate(this.value)"
+            name="pdcateg"
+            
+          >
+          <option value="All Categories" selected="other">All Categories</option>
+            <option value="Mobile">Mobile</option>
+            <option value="Headphones">Headphones</option>
+            <option value="Tablet">Tablet</option>
+            <option value="Laptop">Laptop</option>
+            <option value="Other">Other</option>
+          </select>
+          </div>
+          <div>
+            <button class="dark_mode"  onclick="change()">
+              <i  class="fa-solid fa-circle" id="circle"></i>
+            </button>
+          </div>
+      </div>
+      <!-- FORM  -->
+      <form class="border p-4  mb-2 shadow-lg" id="form_list">
+        <div class="mb-3 categ">
+          <div class="labels d-flex gap-2 align-items-center ">
+            <label for="pdname" id="prdctName"  class="form-label product">Product Name </label><br>
+            <label id="validInfo" >Not Valid Name</label>
+          </div>
+          <input
+          type="text"
+          class="form-control"
+          id="pdname"
+          name="pdname"
+          
+          oninput ="valdiation_()"
+          />
+        </div>
+        <div class="mb-3 categ">
+          <div class="labels d-flex gap-2 align-items-center">
+            <label for="pdprice" class="form-label product" id="product">Product Price </label><br>
+            <label id="validInfo1" >Not Valid Number</label>
+          </div>
+          <input
+            type="text"
+            class="form-control"
+            id="pdprice"
+            name="pdprice"
+            oninput="numvalidate()"
+          />
+        </div>
+        <div class="mb-3 categ ">
+          <label for="pdcateg" class="form-label">Product Category: </label>
+          <label class="categInfo m-0" id="categInfo">Choose Category Please</label>
+          <select
+            type="text"
+            class="form-control"
+            id="pdcateg"
+            
+            name="pdcateg"
+            
+          >
+          <option value="selectItem" selected="selectItem" aria-readonly="true" disabled>Select Category</option>
+            <option value="Mobile">Mobile</option>
+            <option value="Headphones">Headphones</option>
+            <option value="Tablet">Tablet</option>
+            <option value="Laptop">Laptop</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+        <div class="mb-3 heightCustom">
+          <label for="pddesc" class="form-label  " id="prodctCateg">Note</label>
+          <i>(Optional)</i>
+          <input
+            class="form-control"
+            id="pddesc"
+            
+          ></input>
+        </div><br>
+        <div class="btns d-flex gap-2 flex-wrap">
+          <button class="glow-on-hover rounded-pill fw-bold " type="button" id="addBtn"   onclick="sendData()">ADD</button>
+          <button class="glow-on-hover rounded-pill text-danger " type="button"  onclick="RemovData()">Clear All Data</button>
+          <!-- <button class="glow-on-hover rounded-pill text-danger fw-bold" type="button"  onclick="delete_(this.value)">Delete</button> -->
+          <button class="button-six d-none rounded-pill " type="button" id="update_btn" onclick="saved()">update</button>
+
+        </div>
+      </form>
+      <!-- END OF FORM  -->
+      <!-- DISPLAY THE RESULT -->
+       <div class="table-responsive">
+        <table class=" rounded-2  shadow-lg" id="table_display">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Product Name</th>
+              <th scope="col">Price</th>
+              <th scope="col">Category</th>
+              <th scope="col">Note</th>
+              <th scope="col">Update</th>
+              <th scope="col">Delete</th>
+              <th scope="col">Time</th>
+              <th scope="col">ID</th>
+            </tr>
+          </thead>
+          <tbody id="table_body">
+           
+          </tbody>
+        </table>
+      </div> 
+      <!-- <section class="ftco-section">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="table-wrap">
+                <table class="table rounded-2  shadow-lg" id="table_display">
+                  <thead class="thead-primary">
+                    <tr>
+                      <th scope="col">#</th>
+                      <th scope="col">ProductName</th>
+                      <th scope="col">ProductPrice</th>
+                      <th scope="col">ProductCateg</th>
+                      <th scope="col">ProductDesc</th>
+                      <th scope="col">update</th>
+                      <th scope="col">delete</th>
+                      <th scope="col">Date</th>
+                      <th scope="col">Pd-Id</th>
+                    </tr>
+                  </thead>
+                  <tbody id="table_body">
+                
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section> -->
+      <!-- END OF DISPLAY  -->
+    </div>
+    <!-- END OF CRUD  -->
+    <!-- SVG FOOT  -->
+    <svg
+    class="position-fixed"
+      id="foot_dark"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 1440 320"
+    >
+      <path
+        fill="#273036"
+        fill-opacity="1"
+        d="M0,32L30,42.7C60,53,120,75,180,117.3C240,160,300,224,360,256C420,288,480,288,540,288C600,288,660,288,720,277.3C780,267,840,245,900,208C960,171,1020,117,1080,117.3C1140,117,1200,171,1260,165.3C1320,160,1380,96,1410,64L1440,32L1440,320L1410,320C1380,320,1320,320,1260,320C1200,320,1140,320,1080,320C1020,320,960,320,900,320C840,320,780,320,720,320C660,320,600,320,540,320C480,320,420,320,360,320C300,320,240,320,180,320C120,320,60,320,30,320L0,320Z"
+      ></path>
+    </svg>
+    <svg
+    class="position-fixed"
+      id="foot_light"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 1440 320"
+    >
+      <path
+        fill="#f3f4f5"
+        fill-opacity="1"
+        d="M0,32L30,42.7C60,53,120,75,180,117.3C240,160,300,224,360,256C420,288,480,288,540,288C600,288,660,288,720,277.3C780,267,840,245,900,208C960,171,1020,117,1080,117.3C1140,117,1200,171,1260,165.3C1320,160,1380,96,1410,64L1440,32L1440,320L1410,320C1380,320,1320,320,1260,320C1200,320,1140,320,1080,320C1020,320,960,320,900,320C840,320,780,320,720,320C660,320,600,320,540,320C480,320,420,320,360,320C300,320,240,320,180,320C120,320,60,320,30,320L0,320Z"
+      ></path>
+    </svg>
+    </section>
+    <!-- END OF SVG FOOT  -->
+    <script src="jquery.js"></script>
+    <script src="script.js"></script>
+    <!--SweetALERT-->
+  </body>
+</html>
